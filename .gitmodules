@@ -1,0 +1,3 @@
+[submodule "flake-core"]
+	path = flake-core
+	url = https://github.com/flakechain/flake-core.git

@@ -26,16 +26,16 @@ if [ -z $OPENSSL_ROOT_DIR ]; then
 fi
 
 echo "Building IOS armv7"
-rm -r monero/build > /dev/null
-mkdir -p monero/build/release
-pushd monero/build/release
+rm -r flake-core/build > /dev/null
+mkdir -p flake-core/build/release
+pushd flake-core/build/release
 cmake -D IOS=ON -D ARCH=armv7 -D BOOST_LIBRARYDIR=${BOOST_INCLUDEDIR} -D BOOST_INCLUDEDIR=${BOOST_INCLUDEDIR} -D OPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR} -D OPENSSL_ROOT_DIR=${OPENSSL_ROOT_DIR} -D CMAKE_BUILD_TYPE=debug -D STATIC=ON -D BUILD_GUI_DEPS=ON -D INSTALL_VENDORED_LIBUNBOUND=ON -D CMAKE_INSTALL_PREFIX="/Users/jacob/crypto/monero-core/monero"  ../..
 make -j4 && make install
 popd
 echo "Building IOS arm64"
-rm -r monero/build > /dev/null
-mkdir -p monero/build/release
-pushd monero/build/release
+rm -r flake-core/build > /dev/null
+mkdir -p flake-core/build/release
+pushd flake-core/build/release
 cmake -D IOS=ON -D ARCH=armv8-a -D BOOST_LIBRARYDIR=${BOOST_INCLUDEDIR} -D BOOST_INCLUDEDIR=${BOOST_INCLUDEDIR} -D OPENSSL_INCLUDE_DIR=${OPENSSL_INCLUDE_DIR} -D OPENSSL_ROOT_DIR=${OPENSSL_ROOT_DIR} -D CMAKE_BUILD_TYPE=debug -D STATIC=ON -D BUILD_GUI_DEPS=ON -D INSTALL_VENDORED_LIBUNBOUND=ON -D CMAKE_INSTALL_PREFIX="/Users/jacob/crypto/monero-core/monero"  ../..
 make -j4 && make install
 popd

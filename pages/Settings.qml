@@ -262,7 +262,7 @@ Rectangle {
                     daemonPortText: {
                         var node_split = persistentSettings.bootstrapNodeAddress.split(":");
                         if(node_split.length == 2){
-                            (node_split[1].trim() == "") ? "18081" : node_split[1];
+                            (node_split[1].trim() == "") ? "12561" : node_split[1];
                         } else {
                             return ""
                         }
@@ -293,7 +293,7 @@ Rectangle {
 
                     property var rna: persistentSettings.remoteNodeAddress
                     daemonAddrText: rna.search(":") != -1 ? rna.split(":")[0].trim() : ""
-                    daemonPortText: rna.search(":") != -1 ? (rna.split(":")[1].trim() == "") ? "18081" : rna.split(":")[1] : ""
+                    daemonPortText: rna.search(":") != -1 ? (rna.split(":")[1].trim() == "") ? "12561" : rna.split(":")[1] : ""
                     onEditingFinished: {
                         persistentSettings.remoteNodeAddress = remoteNodeEdit.getAddress();
                         console.log("setting remote node to " + persistentSettings.remoteNodeAddress)
@@ -564,8 +564,8 @@ Rectangle {
                         appWindow.persistentSettings.logLevel = currentIndex;
                     }
                     Layout.fillWidth: true
-                    shadowReleasedColor: "#FF4304"
-                    shadowPressedColor: "#B32D00"
+                    shadowReleasedColor: "#5200A9"
+                    shadowPressedColor: "#5200A9"
                     releasedColor: "#363636"
                     pressedColor: "#202020"
                 }
@@ -642,7 +642,7 @@ Rectangle {
             TextBlock {
                 id: guiMoneroVersion
                 font.pixelSize: 14
-                text: qsTr("Embedded Monero version: ") + translationManager.emptyString
+                text: qsTr("Embedded Flake version: ") + translationManager.emptyString
             }
 
             TextBlock {
@@ -676,7 +676,7 @@ Rectangle {
                 textFormat: Text.RichText
                 font.pixelSize: 14
                 font.bold: true
-                property var style: "<style type='text/css'>a {cursor:pointer;text-decoration: none; color: #FF6C3C}</style>"
+                property var style: "<style type='text/css'>a {cursor:pointer;text-decoration: none; color: #6F38A9}</style>"
                 text: (currentWallet ? currentWallet.walletCreationHeight : "") + style + qsTr(" <a href='#'> (Click to change)</a>") + translationManager.emptyString
                 onLinkActivated: {
                     inputDialog.labelText = qsTr("Set a new restore height:") + translationManager.emptyString;

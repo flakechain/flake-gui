@@ -173,7 +173,7 @@ ListView {
                         _amount = (_amount *1);
                     }
 
-                    return _amount + " XMR";
+                    return _amount + " XSF";
                 }
                 color: isOut ? "white" : "#2eb358"
             }

@@ -7,7 +7,7 @@ TEMPLATE = app
 
 QT += qml quick widgets
 
-WALLET_ROOT=$$PWD/monero
+WALLET_ROOT=$$PWD/flale-core
 
 CONFIG += c++11 link_pkgconfig
 packagesExist(libpcsclite) {
@@ -16,7 +16,7 @@ packagesExist(libpcsclite) {
 QMAKE_CXXFLAGS += -fPIC -fstack-protector
 QMAKE_LFLAGS += -fstack-protector
 
-# cleaning "auto-generated" bitmonero directory on "make distclean"
+# cleaning "auto-generated" flakechain directory on "make distclean"
 QMAKE_DISTCLEAN += -r $$WALLET_ROOT
 
 INCLUDEPATH +=  $$WALLET_ROOT/include \
@@ -295,7 +295,7 @@ linux {
             -Wl,-Bdynamic \
             -lGL
     }
-    # currently monero has an issue with "static" build and linunwind-dev,
+    # currently flake has an issue with "static" build and linunwind-dev,
     # so we link libunwind-dev only for non-Ubuntu distros
     CONFIG(libunwind_off) {
         message(Building without libunwind)
@@ -335,7 +335,7 @@ macx {
 
 
 # translation stuff
-TRANSLATIONS = $$files($$PWD/translations/monero-core_*.ts)
+TRANSLATIONS_ = $$files($$PWD/translations/monero-core_*.ts)
 
 CONFIG(release, debug|release) {
     DESTDIR = release/bin
@@ -440,7 +440,7 @@ OTHER_FILES += \
 
 DISTFILES += \
     notes.txt \
-    monero/src/wallet/CMakeLists.txt \
+    flake-core/src/wallet/CMakeLists.txt \
     components/MobileHeader.qml
 
 
