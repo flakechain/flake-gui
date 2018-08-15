@@ -18,13 +18,13 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>monero-wallet-gui</string>
+  <string>flake-wallet-gui</string>
   
   <key>CFBundleName</key>
-  <string>Monero GUI</string>
+  <string>Flakechain GUI</string>
 
   <key>CFBundleIdentifier</key>
-  <string>org.monero-project.monero-wallet-gui</string>
+  <string>com.flakechain.flake-wallet-gui</string>
 
   <key>NSSupportsAutomaticGraphicsSwitching</key>
   <true/>

@@ -25,7 +25,7 @@ bool TranslationManager::setLanguage(const QString &language)
         return true;
     }
 
-    QString dir = qApp->applicationDirPath() + "/translations";
+    QString dir = qApp->applicationDirPath(); // + "/translations";
     QString filename = "monero-core_" + language;
 
     qDebug("%s: loading translation file '%s' from '%s'",

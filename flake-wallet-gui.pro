@@ -7,7 +7,7 @@ TEMPLATE = app
 
 QT += qml quick widgets
 
-WALLET_ROOT=$$PWD/flale-core
+WALLET_ROOT=$$PWD/flake-core
 
 CONFIG += c++11 link_pkgconfig
 packagesExist(libpcsclite) {
