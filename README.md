@@ -1,4 +1,6 @@
-# FLAKE GUI
+# FLAKE GUI v0.0.1
+
+![Flake GUI](./flake-wallet-gui.png)
 
 ## Copyright
 
