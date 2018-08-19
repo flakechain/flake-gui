@@ -33,10 +33,10 @@ elif [ "$BUILD_TYPE" == "release-static" ]; then
     if [ "$platform" != "darwin" ]; then
 	    CONFIG="CONFIG+=release static";
     else
-        # OS X: build static libwallet but dynamic Qt. 
+        # OS X: build static libwallet but dynamic Qt.
         echo "OS X: Building Qt project without static flag"
         CONFIG="CONFIG+=release";
-    fi    
+    fi
     BIN_PATH=release/bin
 elif [ "$BUILD_TYPE" == "release-android" ]; then
     echo "Building release for ANDROID"
@@ -73,7 +73,7 @@ fi
 
 # build libwallet
 ./get_libwallet_api.sh $BUILD_TYPE
- 
+
 # build zxcvbn
 if [ "$DISABLE_PASS_STRENGTH_METER" != true ]; then
     $MAKE -C src/zxcvbn-c || exit
@@ -93,7 +93,7 @@ fi
 if [ "$platform" == "darwin" ]; then
     BIN_PATH=$BIN_PATH/flake-wallet-gui.app/Contents/MacOS/
 elif [ "$platform" == "mingw64" ] || [ "$platform" == "mingw32" ]; then
-    MONEROD_EXEC=monerod.exe
+    MONEROD_EXEC=flaked.exe
 fi
 
 # force version update
@@ -110,7 +110,7 @@ if ! QMAKE=$(find_command qmake qmake-qt5); then
     exit 1
 fi
 $QMAKE ../flake-wallet-gui.pro "$CONFIG" || exit
-$MAKE || exit 
+$MAKE || exit
 
 # Copy monerod to bin folder
 if [ "$platform" != "mingw32" ] && [ "$ANDROID" != true ]; then
