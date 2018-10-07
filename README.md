@@ -149,7 +149,7 @@ The Monero GUI on Windows is 64 bits only; 32-bit Windows GUI builds are not off
 5. Install git
 
     ```
-    pacman -S git
+    pacman -S c
     ```
 
 6. Clone repository
